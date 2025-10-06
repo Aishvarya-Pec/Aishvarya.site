@@ -40,6 +40,14 @@ const ContactSection = () => {
               >
                 {config.email.replace(/@/g, "(at)")}
               </a>{" "}
+              or call me at{" "}
+              <a
+                target="_blank"
+                href={`tel:${config.phone.replace(/[^\d+]/g, "")}`}
+                className="text-gray-200 cursor-can-hover rounded-lg"
+              >
+                {config.phone}
+              </a>{" "}
               or drop your info here.
             </CardDescription>
           </CardHeader>

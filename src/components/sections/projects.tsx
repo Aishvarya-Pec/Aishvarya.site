@@ -12,7 +12,7 @@ import { FloatingDock } from "../ui/floating-dock";
 import Link from "next/link";
 
 import SmoothScroll from "../smooth-scroll";
-import projects, { Project } from "@/data/projects";
+import projects, { Project } from "@/data/projects.user";
 import { cn } from "@/lib/utils";
 
 const ProjectsSection = () => {
@@ -52,6 +52,11 @@ const Modall = ({ project }: { project: Project }) => {
               alt={project.title}
               width={300}
               height={300}
+              onError={(e: any) => {
+                try {
+                  e.currentTarget.src = "/assets/nav-link-previews/projects.png";
+                } catch {}
+              }}
             />
             <div className="absolute w-full h-1/2 bottom-0 left-0 bg-gradient-to-t from-black via-black/85 to-transparent pointer-events-none">
               <div className="flex flex-col h-full items-start justify-end p-6">

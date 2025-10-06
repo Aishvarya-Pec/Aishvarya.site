@@ -3,7 +3,8 @@ import { config } from "@/data/config";
 import { Resend } from "resend";
 import { z } from "zod";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
+const RESEND_API_KEY = process.env.RESEND_API_KEY;
+const resend = new Resend(RESEND_API_KEY);
 
 const Email = z.object({
   fullName: z.string().min(2, "Full name is invalid!"),
@@ -13,7 +14,6 @@ const Email = z.object({
 export async function POST(req: Request) {
   try {
     const body = await req.json();
-    console.log(body);
     const {
       success: zodSuccess,
       data: zodData,
@@ -22,8 +22,15 @@ export async function POST(req: Request) {
     if (!zodSuccess)
       return Response.json({ error: zodError?.message }, { status: 400 });
 
+    if (!RESEND_API_KEY) {
+      return Response.json(
+        { error: "RESEND_API_KEY is not set. Add it to .env.local" },
+        { status: 500 }
+      );
+    }
+
     const { data: resendData, error: resendError } = await resend.emails.send({
-      from: "Porfolio <onboarding@resend.dev>",
+      from: "Portfolio <onboarding@resend.dev>",
       to: [config.email],
       subject: "Contact me from portfolio",
       react: EmailTemplate({
@@ -34,11 +41,16 @@ export async function POST(req: Request) {
     });
 
     if (resendError) {
-      return Response.json({ resendError }, { status: 500 });
+      return Response.json(
+        { error: resendError.message || "Failed to send email" },
+        { status: 500 }
+      );
     }
 
     return Response.json(resendData);
   } catch (error) {
-    return Response.json({ error }, { status: 500 });
+    const message =
+      error instanceof Error ? error.message : "Unknown server error";
+    return Response.json({ error: message }, { status: 500 });
   }
 }

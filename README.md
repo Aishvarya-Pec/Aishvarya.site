@@ -1,8 +1,8 @@
-# 🚀 My Portfolio Website
+# 🚀 AIshvarya Portfolio Website
 
 Welcome to the repository for my personal portfolio website! This is where I showcase my skills, projects, and a bit of my personality through jaw-dropping 3D animations, slick interactions, and fluid motion. If you're into creative web design, you're in the right place.
 
-![Portfolio Preview](https://github.com/Naresh-Khatri/Portfolio/blob/main/public/assets/projects-screenshots/portfolio/landing.png?raw=true)
+![Portfolio Preview](public/assets/projects-screenshots/portfolio/landing.png)
 
 ## 🔥 Features
 
@@ -30,13 +30,13 @@ Welcome to the repository for my personal portfolio website! This is where I sho
 1. Clone the repository:
 
     ```bash
-    git clone https://github.com/Naresh-Khatri/Portfolio.git
+    git clone https://github.com/Aishvarya-Pec/Aishvarya.site.git
     ```
 
 2. Navigate to the project directory:
 
     ```bash
-    cd Portfolio
+    cd Aishvarya.site
     ```
 
 3. Install dependencies:
@@ -64,6 +64,23 @@ This site is deployed on Vercel. For your own deployment, follow these steps:
 1. Push your code to a GitHub repository.
 2. Connect your repository to Vercel.
 3. Vercel will handle the deployment process.
+
+## ✉️ Contact Form Email Setup
+
+The contact form sends emails via Resend.
+
+- Set your recipient email in `src/data/config.ts` under `config.email`.
+- Create `.env.local` in the project root with your Resend API key:
+
+  ```bash
+  RESEND_API_KEY=your_resend_api_key_here
+  ```
+
+- Restart the dev server after adding env vars.
+
+Notes:
+- Default sender is `onboarding@resend.dev` which works for development. For production, set up a verified domain on Resend and use your domain email as the `from` address.
+- If `RESEND_API_KEY` is missing, the API will respond with a clear error.
 
 ## 🤝 Contributing
 

@@ -39,30 +39,31 @@ import { VscCode } from "react-icons/vsc";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 import "@splidejs/react-splide/css";
 import { TbTerminal2 } from "react-icons/tb";
+import { config } from "@/data/config";
 
 const CONTACT_LINKS = [
   {
     name: "Email",
-    content: "naresh.khatri2345@gmail",
-    href: "mailto:naresh.khatri2345@gmail.com",
+    content: config.email.replace(/@/g, "(at)"),
+    href: `mailto:${config.email}`,
     icon: <FaEnvelope height={"50px"} />,
   },
   {
     name: "Phone",
-    content: "1234567890",
-    href: "tel:1234567890",
+    content: config.phone,
+    href: `tel:${config.phone.replace(/[^\d+]/g, "")}`,
     icon: <FaPhone height={"50px"} />,
   },
   {
     name: "LinkedIn",
-    href: "https://www.linkedin.com/in/naresh-khatri/",
-    content: "/naresh-khatri",
+    href: config.social.linkedin,
+    content: config.social.linkedin.replace(/^https?:\/\/(www\.)?/, ""),
     icon: <FaLinkedin height={"50px"} />,
   },
   {
     name: "GitHub",
-    href: "https://github.com/Naresh-Khatri",
-    content: "/naresh-khatri",
+    href: config.social.github,
+    content: config.social.github.replace(/^https?:\/\/(www\.)?/, ""),
     icon: <FaGithub height={"50px"} />,
   },
 ];
@@ -251,9 +252,9 @@ function Page() {
                 />
               </div>
               <div className="flex flex-col gap-3 lg:items-center ml-10 md:ml-20 lg:ml-0">
-                <p className="text-center text-xl">Naresh Khatri</p>
+                <p className="text-center text-xl">AIshvarya</p>
                 <div className="text-xs bg-zinc-700 w-fit px-3 py-1 rounded-full">
-                  Web Developer
+                  Aspiring Software Engineer
                 </div>
               </div>
             </div>
@@ -286,17 +287,11 @@ function Page() {
             style={{ backdropFilter: "blur(2px)" }}
           >
             <h1 className="text-3xl mb-10 lg:md-20">About me</h1>
-            <p className="mb-10 text-roboto">
-              Hey there! I&apos;m Naresh, a Fullstack developer passionate about
-              creating meaningful digital experiences. With great in Web
-              development, I thrive on turning ideas into reality through coding
-              and design. My journey began with a fascination for technology and
-              a drive to make a positive impact.
+            <p className="mb-6 text-roboto italic">
+              “Building intelligent systems that empower people, not just machines.”
             </p>
-            <p className="mb-10">
-              When I&apos;m not coding, you can find me [Your
-              Interests/Hobbies], exploring new technologies, or sipping coffee
-              while brainstorming my next project.
+            <p className="mb-10 text-roboto">
+              Aspiring Software Engineer specializing in full-stack development and AI-driven applications. Experienced in building production-ready web apps, debugging tools, and scalable architectures. Passionate about problem-solving, rapid prototyping, and delivering impactful software solutions.
             </p>
             <h1 className="text-3xl mb-10 lg:md-20">Stuff I use</h1>
             <div className="mb-5">
