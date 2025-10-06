@@ -11,53 +11,31 @@ import "@splidejs/react-splide/css";
 const PROJECTS = [
   {
     id: 1,
-    name: "Coding Ducks",
-    description: `Dive into CodingDucks, a fusion of CodePen's creative playground with LeetCode's problem-solving realm.
-Whether you're a newbie or a seasoned coder, join the community to paddle through coding adventures and let your
-creativity soar.`,
-    link: "https://www.codingducks.live",
-    images: [
-      "/assets/projects-screenshots/codingducks/1.png",
-      "/assets/projects-screenshots/codingducks/2.png",
-      "/assets/projects-screenshots/codingducks/3.png",
-      "/assets/projects-screenshots/codingducks/4.png",
-      "/assets/projects-screenshots/codingducks/5.png",
-    ],
+    name: "Sentinal Malware Detection",
+    description: "AI-powered malware detection web app.",
+    link: "https://sen-tinal-malware-detection-app.vercel.app/",
+    images: ["/assets/projects-screenshots/sentinal.png"],
   },
   {
     id: 2,
-    name: "Ghost Chat",
-    description: `GhostChat is an anonymous messaging app that allows users to connect without revealing their identities. 
-Join the community for intriguing conversations and mysterious encounters.`,
-    link: "https://ghostchatt.vercel.app/",
-    images: [
-      "/assets/projects-screenshots/ghostchat/1.png",
-      "/assets/projects-screenshots/ghostchat/2.png",
-      "/assets/projects-screenshots/ghostchat/3.png",
-      "/assets/projects-screenshots/ghostchat/4.png",
-    ],
+    name: "Thor AI Agent",
+    description: "Autonomous AI agent demo.",
+    link: "https://18ec7144.thor-ai-agent.pages.dev/",
+    images: ["/assets/projects-screenshots/thor.png"],
   },
   {
     id: 3,
-    name: "Coupon Luxury",
-    description: `Welcome to CouponLuxury, your destination for exclusive discounts and savings. Explore the platform to find the
-best deals on luxury brands and products. Join our savvy community of shoppers and unlock access to premium coupons.`,
-    link: "https://www.couponluxury.com/",
-    images: [
-      "/assets/projects-screenshots/couponluxury/1.png",
-      "/assets/projects-screenshots/couponluxury/2.png",
-      "/assets/projects-screenshots/couponluxury/3.png",
-      "/assets/projects-screenshots/couponluxury/4.png",
-      "/assets/projects-screenshots/couponluxury/5.png",
-    ],
+    name: "Split Set Go",
+    description: "Quick splitting utility web app.",
+    link: "https://split-set-go-rat1-qg4nfst6o-aishvarya-pecs-projects.vercel.app/",
+    images: ["/assets/projects-screenshots/splitsetgo.png"],
   },
   {
     id: 4,
-    name: "JNTUA Results Analyser",
-    description: `the go-to app for JNTUA students, empowering them to analyze, compare, and view classwise results effortlessly.
-     Dive into your academic journey with ease, track your progress, and gain valuable insights.`,
-    link: "/projects/4",
-    images: ["/assets/projects-screenshots/jra/1.png"],
+    name: "Expense AI",
+    description: "Track expenses with AI assistance.",
+    link: "https://expense-ai-zy2n.vercel.app/",
+    images: ["/assets/projects-screenshots/expense.png"],
   },
 ];
 function Page() {
@@ -95,6 +73,11 @@ function Page() {
                         width={300}
                         height={400}
                         style={{ height: "200px" }}
+                        onError={(e: any) => {
+                          try {
+                            e.currentTarget.src = "/assets/nav-link-previews/projects.png";
+                          } catch {}
+                        }}
                       />
                     </SplideSlide>
                   ))}
