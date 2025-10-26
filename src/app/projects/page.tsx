@@ -18,10 +18,10 @@ const PROJECTS = [
   },
   {
     id: 2,
-    name: "Thor AI Agent",
-    description: "Autonomous AI agent demo.",
-    link: "https://18ec7144.thor-ai-agent.pages.dev/",
-    images: ["/assets/projects-screenshots/thor.png"],
+    name: "CodeSaviour - Code Fixing App",
+    description: "AI-powered code analysis and instant fixes.",
+    link: "https://codesaviour2.vercel.app/",
+    images: ["/assets/projects-screenshots/code.png"],
   },
   {
     id: 3,
@@ -36,6 +36,13 @@ const PROJECTS = [
     description: "Track expenses with AI assistance.",
     link: "https://expense-ai-zy2n.vercel.app/",
     images: ["/assets/projects-screenshots/expense.png"],
+  },
+  {
+    id: 5,
+    name: "BrainDrainAI - AI Study Assistant",
+    description: "AI-powered study assistant built with Streamlit.",
+    link: "https://braindrainai.streamlit.app/",
+    images: ["/assets/projects-screenshots/brain.png"],
   },
 ];
 function Page() {
