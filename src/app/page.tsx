@@ -6,6 +6,7 @@ import { cn } from "@/lib/utils";
 import AnimatedBackground from "@/components/animated-background";
 import SkillsSection from "@/components/sections/skills";
 import ProjectsSection from "@/components/sections/projects";
+import DemosSection from "@/components/sections/demos";
 import ContactSection from "@/components/sections/contact";
 import HeroSection from "@/components/sections/hero";
 
@@ -19,6 +20,7 @@ function MainPage() {
           </div>
           <HeroSection />
           <SkillsSection />
+          <DemosSection />
           <ProjectsSection />
           <ContactSection />
         </main>
